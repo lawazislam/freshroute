@@ -1,6 +1,0 @@
-__pycache__/
-*.pyc
-backend/freshroute.db
-frontend/node_modules/
-frontend/dist/
-.env.local
