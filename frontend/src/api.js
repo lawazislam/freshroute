@@ -3,7 +3,7 @@
 // production, without editing code. Using ?? rather than || here matters:
 // an explicitly empty string (same-origin, production) is a valid value
 // and must not fall back to the dev default.
-const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8000";
+   const API_BASE = import.meta.env.VITE_API_BASE ?? (import.meta.env.DEV ? "http://localhost:8000" : "");
 
 function getToken() {
   return localStorage.getItem("freshroute_token");
