@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /login
+Allow: /register
+Disallow: /owner
+Disallow: /rider
+Disallow: /orders
+Disallow: /cart
+Disallow: /restaurants/
+
+Sitemap: https://freshroute-arxz.onrender.com/sitemap.xml
