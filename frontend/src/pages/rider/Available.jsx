@@ -47,7 +47,7 @@ export default function Available() {
       // not an error worth alarming over, so it gets its own calmer
       // message and immediately drops off the list below.
       if (err.message.includes("already been claimed")) {
-        setConflictToast("Someone else just claimed that one — here's what's still open.");
+        setConflictToast("Someone else just claimed that one. Here's what's still open.");
       } else {
         setError(err.message);
       }

@@ -186,6 +186,10 @@ def _order_to_out(conn, order_row) -> dict:
     ).fetchone()
     d = dict(order_row)
     d["restaurant_name"] = restaurant["name"] if restaurant else "Unknown"
+    d["rider_name"] = None
+    if order_row["rider_id"] is not None:
+        rider = conn.execute("SELECT name FROM users WHERE id = ?", (order_row["rider_id"],)).fetchone()
+        d["rider_name"] = rider["name"] if rider else None
     d["items"] = [dict(i) for i in items]
     return d
 

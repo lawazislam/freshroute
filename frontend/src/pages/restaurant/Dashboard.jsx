@@ -116,12 +116,12 @@ export default function Dashboard() {
                 ))}
                 {o.status === "preparing" && (
                   <span className="muted" style={{ fontSize: "0.85rem", alignSelf: "center" }}>
-                    {o.rider_id ? "Rider assigned, awaiting pickup" : "Waiting for a rider to claim"}
+                    {o.rider_name ? `${o.rider_name} is on the way to pick this up` : "Waiting for a rider to claim"}
                   </span>
                 )}
                 {o.status === "out_for_delivery" && (
                   <span className="muted" style={{ fontSize: "0.85rem", alignSelf: "center" }}>
-                    Out with rider
+                    {o.rider_name ? `Picked up by ${o.rider_name}, on the way to the customer` : "Out with rider"}
                   </span>
                 )}
               </div>

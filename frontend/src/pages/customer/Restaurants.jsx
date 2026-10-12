@@ -40,7 +40,7 @@ export default function Restaurants() {
         <EmptyState
           icon="plate"
           title="No restaurants yet"
-          message="Check back soon — new kitchens are added regularly."
+          message="Check back soon, new kitchens are added regularly."
         />
       ) : (
       <div className="restaurant-grid">

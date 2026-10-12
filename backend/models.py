@@ -91,6 +91,7 @@ class OrderOut(BaseModel):
     delivery_lat: float
     delivery_lng: float
     rider_id: Optional[int]
+    rider_name: Optional[str] = None
     created_at: str
     items: list[OrderItemOut]
 
