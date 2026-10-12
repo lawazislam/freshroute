@@ -1,6 +1,6 @@
 /* FreshRoute design tokens.
    Charcoal-green base + chili-red + turmeric-gold, paper surface for content.
-   Not the cream/terracotta or black/neon defaults — food-specific choices. */
+   Not the cream/terracotta or black/neon defaults: food-specific choices. */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
@@ -65,7 +65,7 @@ h1 { font-size: 2.1rem; }
 h2 { font-size: 1.5rem; letter-spacing: 0.01em; }
 h3 { font-size: 1.15rem; }
 
-/* A small, consistent "kicker" label used above section headings — the
+/* A small, consistent "kicker" label used above section headings, the
    kind of detail that separates a deliberately designed page from a
    default one. Deployed sparingly, only where it earns its place. */
 .kicker {
@@ -597,7 +597,7 @@ label {
 }
 
 /* Menu item list: a visible row, not just a .card with inline flex
-   hacked on — consistent spacing, a hover lift so it reads as something
+   hacked on, consistent spacing, a hover lift so it reads as something
    you're browsing rather than a flat database dump. */
 .menu-item-list { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1.5rem; }
 .menu-item-card {
@@ -935,4 +935,38 @@ label {
   background: var(--charcoal-green);
   border-color: var(--charcoal-green);
   color: var(--paper);
+}
+
+/* Demo-account disclosure on the login page: a native <details> element
+   so all 12 restaurant-owner logins are genuinely discoverable without
+   permanently pushing 12 extra lines onto a form that's otherwise meant
+   to look like a real product's login screen. */
+.demo-accounts-toggle {
+  margin-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+.demo-accounts-toggle summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--chili-red-dark);
+  list-style: none;
+}
+.demo-accounts-toggle summary::-webkit-details-marker { display: none; }
+.demo-accounts-toggle summary::before { content: "▸ "; }
+.demo-accounts-toggle[open] summary::before { content: "▾ "; }
+.demo-accounts-grid {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.demo-accounts-grid .btn-ghost {
+  width: 100%;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4em 0.7em;
 }
